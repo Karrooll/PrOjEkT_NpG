@@ -1,8 +1,10 @@
 # PrOjEkT_NpG
 
 
-Zasady pisania kodu: \n
+Zasady pisania kodu: 
 
-Piszemy kod przejrzyście tj. nie używamy zmiennej x,y czy nie nazywamy funkcji fun. \n
-Komentujemy kod może nie każdą linijkę ale ktoś to później będzie skelejał \n
-Przed przesłaniem na gita sprawdzamy działanie tego co napisaliśmy \n
+Piszemy kod przejrzyście tj. nie używamy zmiennej x,y czy nie nazywamy funkcji fun. 
+
+Komentujemy kod może nie każdą linijkę ale ktoś to później będzie skelejał 
+
+Przed przesłaniem na gita sprawdzamy działanie tego co napisaliśmy 
