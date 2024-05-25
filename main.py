@@ -11,6 +11,7 @@ def main():
 
         if wybor == 1:
             x=1
+            x=3
 
 
 
