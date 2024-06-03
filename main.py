@@ -1,8 +1,12 @@
 from Odczyt import utworz_liste_aforyzmow
 from czas import wybierz_aforyzm_na_dzien, przesun_date_programu
 import datetime
+from muzyka import odtworz_melodie
 
 def main():
+    # Odtwarzanie melodii po uruchomieniu programu
+    odtworz_melodie()
+    
     aforyzmy = utworz_liste_aforyzmow()
     dzisiejsza_data = datetime.date.today()
 
