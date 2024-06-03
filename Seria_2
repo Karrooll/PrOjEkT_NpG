@@ -1,0 +1,5 @@
+Witajcie!,
+po dość długim czasie udało nam się (z dużym opóźnieniem) skończyć serię 1 zadań. Pozostało tylko złączyć wszystko w całość więc proszę o przeniesienie swoich funkcji do main.py by zachować jego funkcjonalność.
+Dodatkowo pojawi się zadanie stworzenie funkcji która będzie zapisywać do pliku anaforyzmy które zostały już użyte (trzeba ją wywołać po tym jak anaforyzm zostanie już wylosowany ale jeszcze nie przekazany do terminala lub delikatnie zmodyfikować funkcję losującą anaforyzm).
+Po konsultacjach doszliśmy do wniosku że będziemy chcieli robić GUI do naszego programu, aczkolwiek zależy to jak pójdzie nam ta część projektu
+Powodzenia !
