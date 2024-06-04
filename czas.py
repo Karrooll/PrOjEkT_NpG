@@ -1,10 +1,19 @@
 import datetime
+from aforyzmy_uzyte import sprawdz_czy_uzyty, zapisz_uzyty_aforyzm
 
 def wybierz_aforyzm_na_dzien(aforyzmy, data):
-    # Oblicz różnicę dni między podaną datą a datą 2024-06-5
-    indeks = (data - datetime.date(2024, 6, 5)).days % len(aforyzmy)
-    # Wybierz aforyzm na podstawie obliczonego indeksu
-    return aforyzmy[indeks]
+    """Wybiera aforyzm na dany dzień, który nie był jeszcze użyty."""
+    while True:  # Pętla, która będzie działać do momentu znalezienia nieużytego aforyzmu
+        # Oblicz różnicę dni między podaną datą a datą 2024-06-5
+        # i znajdź indeks w liście aforyzmów za pomocą modulo
+        indeks = (data - datetime.date(2024, 6, 5)).days % len(aforyzmy)
+        aforyzm_na_dzisiaj = aforyzmy[indeks]  # Wybierz aforyzm na podstawie obliczonego indeksu
+        
+        # Sprawdź, czy aforyzm został już użyty
+        if not sprawdz_czy_uzyty(aforyzm_na_dzisiaj):
+            # Zapisz aforyzm jako użyty
+            zapisz_uzyty_aforyzm(aforyzm_na_dzisiaj)
+            return aforyzm_na_dzisiaj  # Zwróć wybrany aforyzm, który nie był jeszcze użyty
 
 def przesun_date_programu(obecna_data):
     # Wyświetl aktualną datę
