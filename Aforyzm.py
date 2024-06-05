@@ -1,7 +1,8 @@
 class Aforyzm:
-    def __init__(self, tekst):
+    def __init__(self, tekst, p_id):
         self.tekst = tekst
         self.oceny = []
+        self.id = p_id
 
     def dodaj_ocene(self):
         while True:

@@ -1,19 +1,25 @@
 import datetime
-from aforyzmy_uzyte import sprawdz_czy_uzyty, zapisz_uzyty_aforyzm
+from Odczyt import utworz_liste_aforyzmow
 
-def wybierz_aforyzm_na_dzien(aforyzmy, data):
+def wybierz_aforyzm_na_dzien(aforyzmy, aforyzmy_uzyte, data):
     """Wybiera aforyzm na dany dzień, który nie był jeszcze użyty."""
-    while True:  # Pętla, która będzie działać do momentu znalezienia nieużytego aforyzmu
-        # Oblicz różnicę dni między podaną datą a datą 2024-06-5
-        # i znajdź indeks w liście aforyzmów za pomocą modulo
-        indeks = (data - datetime.date(2024, 6, 5)).days % len(aforyzmy)
-        aforyzm_na_dzisiaj = aforyzmy[indeks]  # Wybierz aforyzm na podstawie obliczonego indeksu
-        
-        # Sprawdź, czy aforyzm został już użyty
-        if not sprawdz_czy_uzyty(aforyzm_na_dzisiaj):
-            # Zapisz aforyzm jako użyty
-            zapisz_uzyty_aforyzm(aforyzm_na_dzisiaj)
-            return aforyzm_na_dzisiaj  # Zwróć wybrany aforyzm, który nie był jeszcze użyty
+    # Oblicz różnicę dni między podaną datą a datą 2024-06-5
+    # i znajdź indeks w liście aforyzmów za pomocą modulo
+    if len(aforyzmy) == 0:
+        #Jeśli lista pusta odczytaj od nowa
+        aforyzmy = utworz_liste_aforyzmow()
+        #Wyczyść uzyte indeksy
+        aforyzmy_uzyte.clear()
+    indeks = (data - datetime.date(2024, 6, 5)).days % len(aforyzmy)
+    aforyzm_na_dzisiaj = aforyzmy[indeks]  # Wybierz aforyzm na podstawie obliczonego indeksu
+    return aforyzm_na_dzisiaj, aforyzmy
+
+def zmiana_aforyzmu(aforyzmy, aforyzmy_uzyte, aforyzm_na_dzisiaj):
+    #Mechanizm zapisu uzytych aforyzmow i usuwania mozliwosci ich wybrania
+    aforyzmy_uzyte.append(aforyzm_na_dzisiaj.id)
+    for aforyzm in aforyzmy:
+        if aforyzm.id == aforyzm_na_dzisiaj.id:
+            aforyzmy.remove(aforyzm)
 
 def przesun_date_programu(obecna_data):
     # Wyświetl aktualną datę
