@@ -18,7 +18,6 @@ def main():
 
 
     while True:
-        print(aforyzmy)
         # Wyświetlanie menu programu
         print('\n----------------AFORYZMY NA KAŻDY DZIEŃ----------------')
         print("Aby wyświetlić aforyzm na dzisiejszy dzień wciśnij 1")
