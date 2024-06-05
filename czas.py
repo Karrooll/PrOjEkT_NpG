@@ -1,5 +1,5 @@
 import datetime
-from Odczyt import utworz_liste_aforyzmow
+from Odczyt import utworz_liste_aforyzmow, znajdz_i_nadpisz_aforyzm
 
 def wybierz_aforyzm_na_dzien(aforyzmy, aforyzmy_uzyte, data):
     """Wybiera aforyzm na dany dzień, który nie był jeszcze użyty."""
@@ -19,6 +19,8 @@ def zmiana_aforyzmu(aforyzmy, aforyzmy_uzyte, aforyzm_na_dzisiaj):
     aforyzmy_uzyte.append(aforyzm_na_dzisiaj.id)
     for aforyzm in aforyzmy:
         if aforyzm.id == aforyzm_na_dzisiaj.id:
+            #Nadpisanie danych o aforzymie, gdyz zniknie on z listy - stracilibysmy dane o ocenach
+            znajdz_i_nadpisz_aforyzm(aforyzm.id, aforyzm.zwroc_srednia(), aforyzm.liczba_ocen + len(aforyzm.oceny))
             aforyzmy.remove(aforyzm)
 
 def przesun_date_programu(obecna_data):

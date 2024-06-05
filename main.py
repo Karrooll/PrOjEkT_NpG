@@ -15,6 +15,8 @@ def main():
     dzisiejsza_data = datetime.date.today()
     # Odczytanie uzytych aforyzmow z poprzedniego dzialania programu
     sprawdz_czy_uzyty(aforyzmy, aforyzmy_uzyte)
+    #for a in aforyzmy:
+    #    a.wyswietl_aforyzm()
 
 
     while True:
@@ -42,6 +44,7 @@ def main():
                 #Rowniez zapisanie uzytegi aforyzmu i usuniecie z puli
                 aforyzm_na_dzisiaj, aforyzmy = wybierz_aforyzm_na_dzien(aforyzmy, aforyzmy_uzyte, dzisiejsza_data)
                 zmiana_aforyzmu(aforyzmy, aforyzmy_uzyte, aforyzm_na_dzisiaj)
+                #Zapis indeksów użytych aforyzmów
                 zapisz_uzyte_aforyzmy(aforyzmy_uzyte)
                 print("Wybrano wyjście z programu!")
                 break
